@@ -1,5 +1,5 @@
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 
 from langchain_openai import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage
@@ -42,7 +42,7 @@ if st.button("実行"):
             ]
             result = llm(messages)
 
-            st.write(f"提案された料理: {result[0].content}")
+            st.write(f"提案された料理: {result.content}")
 
         else:
             st.error("料理のジャンルや好みを入力してから「実行」ボタンを押してください。")
@@ -59,7 +59,7 @@ if st.button("実行"):
             ]
             result = llm(messages)
 
-            st.write(f"提案された旅行プラン: {result[0].content}")
+            st.write(f"提案された旅行プラン: {result.content}")
 
         else:
             st.error("旅行の目的地や日程、予算などを入力してから「実行」ボタンを押してください。")
